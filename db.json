@@ -1,0 +1,95 @@
+[{
+	"EMEAR Sales Demo": {
+		"OrgId": "ded55888-b586-4de6-bec8-8541422f29df",
+		"ChatId": "5bcd5880-1c5a-11ea-b0e3-5185eae6fd39"
+    },
+    "Activeo Gold": {
+        "OrgId":"b131d568-3c2f-4e7e-b5aa-9a49f343f801",
+        "ChatId":"76544960-afb8-11ea-9cbb-e755a8b48dd7"
+    },
+    "Avodaq AG Gold": {
+        "OrgId":"e16aa9e1-044c-40ca-bea1-a998d2519108",
+        "ChatId":"553a19c0-eb55-11ea-80dd-91eb2544ad28"
+    },
+    "Bechtle Gold": {
+        "OrgId":"137b9113-7847-433c-9bb7-3d624539ce65",
+        "ChatId":"c68c4540-a054-11ea-af30-81e640d6cbf5"
+    },
+    "BrightCloud Gold": {
+        "OrgId":"1cfc45da-1cd2-490a-a064-ee0c11934bef",
+        "ChatId":"148b2d20-69f9-11ea-b94c-6bbeef955b05"
+    },
+    "BT Global Services": {
+        "OrgId":"4747eed3-5f4e-4181-9e04-9a39fe8191a0",
+        "ChatId":"1e5d08a0-801a-11ea-9d99-6fc7fff6627c"
+    },
+    "Bucher Suter Gold": {
+        "OrgId":"20c5c1ca-7810-488e-b016-9b05bd8d3e66",
+        "ChatId":"076bfd60-fbde-11e9-bacb-b9744e007743"
+    },
+    "Connect MS Gold": {
+        "OrgId":"4a9e8170-4230-4fb2-ae1e-5da941a2637e",
+        "ChatId":"03151ab0-83b7-11ea-87c7-650a86654b31"
+    },
+    "Deutsche Telekom Gold": {
+        "OrgId":"e23f813a-8d12-43ba-86cb-0de411be5bb8",
+        "ChatId":"cba6f280-c5e5-11ea-bdbe-dd7b865a999f"
+    },
+    "Indra Gold": {
+        "OrgId":"d24529e1-c8e3-4e6d-b37f-4f868d52f266",
+        "ChatId":"0051c450-4da6-11ea-bda3-f35ef53ff91c"
+    },
+    "Italtel Gold": {
+        "OrgId":"d7a41585-5887-47ca-938b-79cdd62a77bf",
+        "ChatId":"d2f51c70-695f-11ea-aab7-cb271b284577"
+    },
+    "KCOM Gold": {
+        "OrgId":"2eb96c56-f367-4e8b-a08a-ba651bd29ac5",
+        "ChatId":"d03bd4e0-fcab-11e9-bacb-b9744e007743"
+    },
+    "Natilik Gold":{
+        "OrgId":"5a6dff10-0086-4f8c-9e5a-6bcb25814563",
+        "ChatId":"844ff530-fbf6-11e9-b891-4b200cfb1f18"
+    },
+    "NetDesign Gold": {
+        "OrgId":"f7c22713-62ed-4e91-bb5c-37f9832f6793",
+        "ChatId":"0cdb4410-69cd-11ea-aab7-cb271b284577"
+    },
+    "NTS GOLD": {
+        "OrgId":"fea9e145-e811-4844-a44c-67e41c90b213",
+        "ChatId":"0e71d860-d1b1-11ea-8016-6592913ebc29"
+    },
+    "NTT EU Gold": {
+        "OrgId":"de97bd25-7982-4744-8eb7-9a2bfa8332b5",
+        "ChatId":"a47447c0-c5c3-11ea-bdbe-dd7b865a999f"
+    },
+    "OBS Gold": {
+        "OrgId":"05edacfc-794f-45c1-befb-8c3812ca0c18",
+        "ChatId":"b654e7e0-faf5-11e9-b891-4b200cfb1f18"
+    },
+    "Soitron Gold": {
+        "OrgId":"53add697-7421-4d4f-be34-eb8fd6d225d8",
+        "ChatId":"4e56c770-a578-11ea-85b1-e73a22fbea76"
+    },
+    "SWS Gold": {
+        "OrgId":"5988f457-6317-4c4d-b865-b7ce6a7226b1",
+        "ChatId":"789a95f0-a4ee-11ea-85b1-e73a22fbea76"
+    },
+    "Tata Communications Gold": {
+        "OrgId":"76db1be6-5f44-4be7-b909-f6b0b15a03a7",
+        "ChatId":"c5511ed0-f0dc-11e9-bfb9-c9db79627163"
+    },
+    "Telefonica Gold": {
+        "OrgId":"379aa58c-99d6-471b-a23d-32dcc33a9b23",
+        "ChatId":"fe728320-4e4c-11ea-bda3-f35ef53ff91c"
+    },
+    "Vodafone Gold": {
+        "OrgId":"7b27eef8-9868-4cda-97bd-b91ac23ce4db",
+        "ChatId":"d165acf0-00df-11ea-bacb-b9744e007743"
+    },
+    "WTG Gold": {
+        "OrgId":"d5caf538-90ca-48b8-be52-211be940dc46",
+        "ChatId":"bc729650-6edf-11ea-b94c-6bbeef955b05"
+    }
+
+}]
