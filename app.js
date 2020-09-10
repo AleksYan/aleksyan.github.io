@@ -38,6 +38,7 @@ function buildIdDiv(orgId, chatId){
     const divIds = document.getElementById('IDs');
     divIds.innerHTML = '';
     const p1 = document.createElement('p');
+    p1.className = 'mb-0';
     p1.innerHTML = `OrgID: <span id="orgid">${orgId}`;
     divIds.appendChild(p1);
 
@@ -50,7 +51,8 @@ function buildIdDiv(orgId, chatId){
 
 
 function loadChat() {
-    localStorage.clear();
+    //start spinner on start button
+    chatStartSpinnerOn();
     
     const orgId = document.getElementById('orgid').innerText;
     const chatId = document.getElementById('chatid').innerText;
@@ -67,3 +69,26 @@ function loadChat() {
     bubbleScript.setAttribute('charset', 'utf-8');
     e.parentNode.insertBefore(bubbleScript, e);
     }
+
+
+//starting Loading spinner on StartChat button
+function chatStartSpinnerOn() {
+    const btn = document.getElementById('startchat');
+    btn.setAttribute("disabled", true);
+    btn.innerHTML = '<span class="spinner-border spinner-border-sm"></span> Loading...'
+
+    let intervalCheck = setInterval((() => {
+        if (document.getElementsByClassName('minimized-button-container minimized-button-chat') != null) {
+            chatStartSpinnerOff();
+            clearInterval(intervalCheck);
+        } 
+
+    }),2500);
+};
+
+function chatStartSpinnerOff() {
+
+    const btn = document.getElementById('startchat');
+    btn.removeAttribute("disabled");
+    btn.innerHTML = 'Start Chat'
+}
