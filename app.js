@@ -2,10 +2,15 @@
 document.addEventListener("DOMContentLoaded", detectSelected);
 document.getElementById("startchat").addEventListener("click", loadChat);
 
+
 // function to detect selected value in select-form
 function detectSelected() {
   //clear previous chat sessions
   sessionStorage.clear();
+  //hiding chat settings view
+  const chatRow = document.getElementById('chat-row');
+  chatRow.hidden = true;
+
   const chatdiv = document.getElementById("cisco-chat-bubble-app");
   if (chatdiv) {
     chatdiv.remove();
@@ -81,13 +86,17 @@ function chatStartSpinnerOff() {
   const btn = document.getElementById("startchat");
   btn.removeAttribute("disabled");
   btn.innerHTML = "Start Chat";
-  loadChatSettings();
+  setTimeout(loadChatSettings,1000);
 }
 
 function loadChatSettings(){
-  let chatsettings = sessionStorage.getItem("bubble_state")
+  console.log('-----------------');
+  let chatsettings = sessionStorage.getItem("bubble_state");
   chatsettings = JSON.stringify(JSON.parse(chatsettings),undefined,2);
   console.log(chatsettings);
   const jsonEl = document.getElementById('json');
-  jsonEl.innerText = chatsettings;
+  jsonEl.innerHTML = chatsettings;
+  Prism.highlightAll();
+  const chatRow = document.getElementById('chat-row');
+  chatRow.hidden = false;
 }
