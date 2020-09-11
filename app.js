@@ -81,4 +81,13 @@ function chatStartSpinnerOff() {
   const btn = document.getElementById("startchat");
   btn.removeAttribute("disabled");
   btn.innerHTML = "Start Chat";
+  loadChatSettings();
+}
+
+function loadChatSettings(){
+  let chatsettings = sessionStorage.getItem("bubble_state")
+  chatsettings = JSON.stringify(JSON.parse(chatsettings),undefined,2);
+  console.log(chatsettings);
+  const jsonEl = document.getElementById('json');
+  jsonEl.innerText = chatsettings;
 }
