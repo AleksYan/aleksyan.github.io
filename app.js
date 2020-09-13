@@ -1,4 +1,6 @@
 const clipboard = document.getElementById('clipboard');
+//clipboard icon
+const svg = clipboard.innerHTML;
 
 //add event listener on load to get selected orgId and templateID
 document.addEventListener("DOMContentLoaded", detectSelected);
@@ -124,7 +126,6 @@ function highlightSVG(){
 }
 
 function clipboardCopied(){
-  const svg = clipboard.innerHTML;
-  clipboard.innerHTML = '<span class="text-primary">Copied</span>'
+  clipboard.innerHTML = '<span class="text-primary">Copied</span>';
   setTimeout(()=>{clipboard.innerHTML=svg},1000);
 }
