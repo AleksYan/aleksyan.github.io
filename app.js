@@ -1,12 +1,17 @@
 const clipboard = document.getElementById('clipboard');
+const refresh = document.getElementById('refresh-bubble-set');
 //clipboard icon
-const svg = clipboard.innerHTML;
+const svgClipboard = clipboard.innerHTML;
+
 
 //add event listener on load to get selected orgId and templateID
 document.addEventListener("DOMContentLoaded", detectSelected);
 document.getElementById("startchat").addEventListener("click", loadChat);
 clipboard.addEventListener("mouseover",highlightSVG);
+refresh.addEventListener("mouseover",highlightSVG);
 clipboard.addEventListener("click",clipboardCopied);
+refresh.addEventListener("click",loadChatSettings);
+
 
 //initialize copy to clip library
 const copyToClip = new ClipboardJS(clipboard);
@@ -51,20 +56,6 @@ function loadPartner(name) {
   xhr.send();
 } 
 
-// build UI part with Org and Chat IDs
-function buildIdDiv(orgId, chatId) {
-  const divIds = document.getElementById("IDs");
-  divIds.innerHTML = "";
-  const p1 = document.createElement("p");
-  p1.className = "mb-0";
-  p1.innerHTML = `OrgID: <span id="orgid">${orgId}`;
-  divIds.appendChild(p1);
-
-  const p2 = document.createElement("p");
-  p2.innerHTML = `ChatID: <span id="chatid">${chatId}`;
-  divIds.appendChild(p2);
-}
-
 function loadChat() {
   //start spinner on start button
   chatStartSpinnerOn();
@@ -88,6 +79,37 @@ function loadChat() {
     setTimeout(chatStartSpinnerOff, 1000);
   };
 }
+//fetch bubble_state json from session storage
+function loadChatSettings(){
+  console.log('-----------------');
+  let chatsettings = sessionStorage.getItem("bubble_state");
+  chatsettings = JSON.stringify(JSON.parse(chatsettings),undefined,2);
+  // console.log(chatsettings);
+  const jsonEl = document.getElementById('json');
+  jsonEl.innerHTML = chatsettings;
+  //highlight with json syntax
+  Prism.highlightAll();
+  //unhide div with chat bubble settings
+  const chatRow = document.getElementById('chat-row');
+  chatRow.hidden = false;
+}
+
+
+// UI related functions
+//---------------------------------------
+// build UI part with Org and Chat IDs
+function buildIdDiv(orgId, chatId) {
+  const divIds = document.getElementById("IDs");
+  divIds.innerHTML = "";
+  const p1 = document.createElement("p");
+  p1.className = "mb-0";
+  p1.innerHTML = `OrgID: <span id="orgid">${orgId}`;
+  divIds.appendChild(p1);
+
+  const p2 = document.createElement("p");
+  p2.innerHTML = `ChatID: <span id="chatid">${chatId}`;
+  divIds.appendChild(p2);
+}
 
 //starting Loading spinner on StartChat button
 function chatStartSpinnerOn() {
@@ -103,29 +125,16 @@ function chatStartSpinnerOff() {
   btn.innerHTML = "Start Chat";
   setTimeout(loadChatSettings,1500);
 }
-//fetch bubble_state json from session storage
-function loadChatSettings(){
-  // console.log('-----------------');
-  let chatsettings = sessionStorage.getItem("bubble_state");
-  chatsettings = JSON.stringify(JSON.parse(chatsettings),undefined,2);
-  // console.log(chatsettings);
-  const jsonEl = document.getElementById('json');
-  jsonEl.innerHTML = chatsettings;
-  //highlight with json syntax
-  Prism.highlightAll();
-  //unhide div with chat bubble settings
-  const chatRow = document.getElementById('chat-row');
-  chatRow.hidden = false;
-}
 
 function highlightSVG(){
-  clipboard.firstChild.setAttribute("fill","#0d6efd");
-  clipboard.style.cursor = "pointer";
-  clipboard.addEventListener("mouseout",()=>clipboard.firstChild.setAttribute("fill","current"));
+  // console.log(this);
+  this.firstChild.setAttribute("fill","#0d6efd");
+  this.style.cursor = "pointer";
+  this.addEventListener("mouseout",()=>this.firstChild.setAttribute("fill","current"));
   
 }
 
 function clipboardCopied(){
   clipboard.innerHTML = '<span class="text-primary">Copied</span>';
-  setTimeout(()=>{clipboard.innerHTML=svg},1000);
+  setTimeout(()=>{clipboard.innerHTML=svgClipboard},1000);
 }
